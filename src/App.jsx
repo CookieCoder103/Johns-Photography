@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+
+import Header from "./Components/Header.jsx";
+import Navbar from "./Components/Navbar.jsx";
+import PriceCard from "./Components/PriceCard.jsx";
+import AboutMe from "./Components/AboutMe.jsx";
+import Testimonials from "./Components/Testimonials.jsx";
+import Art from "./Components/Art.jsx";
+import ContactMe from "./Components/ContactMe.jsx";
+import Footer from "./Components/Footer.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <div className="appContainer">
+        <Navbar />
+        <Header />
+        <AboutMe />
+        <Art />
+        <Testimonials />
 
-export default App
+        <div className="pricingSection" id="Pricing">
+          <h2>Pricing</h2>
+          <div className="pricecardDiv">
+            
+            <PriceCard
+              header="The 'Daydream' Package"
+              detail1="Full wedding day coverage"
+              detail2="Online gallery of all edited high-resolution photos"
+              detail3="Print release for personal printing"
+              price="£1,500"
+            />
+
+            <PriceCard
+              header="The 'Eternity' Package"
+              detail1="Wedding day and reception coverage"
+              detail2="10x10 custom wedding album"
+              detail3="Photoshoots for the guests and family"
+              price="£2,500"
+            />
+
+            <PriceCard
+              header="The 'Happily Ever After' Package"
+              detail1="Film crew to record the whole event"
+              detail2="Engagement photo session"
+              detail3="Custom wedding day slideshow & movie"
+              price="£5,000"
+            />
+
+          </div>
+        </div>
+        <ContactMe />
+        <Footer />
+      </div>
+    </>
+  );
+}
+export default App;
